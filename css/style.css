@@ -1,0 +1,180 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.header{
+ display: flex;
+ position: sticky;
+ top: 0px;
+ padding: 2rem;
+ align-items: center;
+ background-color:#EFE2EC;
+ width: 100%;
+ justify-content: center;
+ box-shadow: 0 2px 7px rgb(173, 153, 153);
+}
+
+
+.header__nav{
+    width: 100%;
+    max-width: 800px;
+   
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.header__items{
+    
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.header__items li, .btn__links> ul> li{
+    width: 5rem;
+    text-align: center;
+    padding: 1rem 1rem;
+    background-color:#BA3BCE;
+    border-radius: 5px;
+    list-style: none;
+    color: white;
+    cursor: pointer;
+}
+.btn__links ul{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.header__main_img img{
+    width: 250px;
+}
+
+.header__main{
+    display: flex;
+    flex-wrap: wrap;
+    
+    align-content: center;
+    justify-content:space-around;
+    background-color: #F8CDEE;
+    height:400px;
+    align-items: center;
+}
+
+.header__main_description{
+    text-align: center;
+}
+
+.header__main_description{
+   font-family: sans-serif;
+}
+span{
+    color:#FF1BBF ;
+}
+
+.main__produtos{
+   
+    background-color: #CE82D0;
+    display: flex;
+    padding: 1.2rem;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.swiper{
+    width: 100%;
+    max-width: 900px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+/* .swiper-wrapper{
+    width: 300px;
+} */
+.swiper-slide {
+    text-align: center; /* Centraliza o conteúdo dos slides */
+  }
+  .main_imgs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ 
+    width: 200px;
+  }
+  .swiper-slide img {
+    width: 300px;
+    padding: 1rem;
+    height: 300px; /* Garante que as imagens dos slides não ultrapassem a largura do contêiner */
+  }
+.main__cards{
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.img__menu{
+    width: 50px;
+    border-radius: 50%;
+}
+.header__amburgue{
+    width: 100%;
+    display: none;
+}
+
+.logo__menu__resp{
+ 
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    display: none;
+}
+.logo__menu__resp :last-child{
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: red;
+}
+
+.btn__links{
+    display: none;
+}
+
+@media screen and (max-width:460px) {
+     .header__items{
+        display: none;
+    }
+    .header__amburgue{
+        display:flex;
+    } 
+   /* .logo__menu__resp{
+    display: flex;
+   }
+      */
+    .header__nav{
+        justify-content: center;
+    }
+
+    .btn__links{
+       display: none;
+       justify-content: center;
+        width: 100%;
+       
+    }
+
+    .logo__menu__resp{
+        display: flex;
+    }
+  
+}
+
