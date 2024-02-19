@@ -19,7 +19,7 @@ a{
  background-color:#EFE2EC;
  width: 100%;
  justify-content: center;
- box-shadow: 0 2px 7px rgb(173, 153, 153);
+ box-shadow: 0 0px 8px rgb(173, 153, 153);
 }
 
 
@@ -39,8 +39,12 @@ a{
 }
 
 .header__items li, .btn__links> ul> li{
-    width: 6rem;
+    width: 9rem;
     text-align: center;
+    height: 3rem;
+    font-size: .9rem;
+    text-transform: uppercase;
+    font-family:'Times New Roman', Times, serif;
     padding: 1rem 1rem;
     background-color:#BA3BCE;
     border-radius: 5px;
@@ -51,7 +55,7 @@ a{
 .btn__links ul{
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 15px;
 }
 
 .header__main_img img{
@@ -65,8 +69,12 @@ a{
     align-content: center;
     justify-content:space-around;
     background-color: #F8CDEE;
-    height:400px;
+    height:700px;
     align-items: center;
+}
+.img__header img{
+    width: 30px;
+
 }
 
 .header__main_description{
@@ -85,10 +93,14 @@ span{
     background-color: #CE82D0;
     display: flex;
     padding: 1.2rem;
-    height: 50vh;
+    height: 80vh;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+.informaimg p{
+    font-size: 1.5rem;
+    font-family: cursive;
 }
 
 .swiper{
@@ -111,10 +123,11 @@ span{
     flex-direction: column;
     align-items: center;
     justify-content: center;
- 
+    
     width: 200px;
   }
   .swiper-slide img {
+    border-radius:50%;
     width: 300px;
     padding: 1rem;
     height: 300px; /* Garante que as imagens dos slides não ultrapassem a largura do contêiner */
@@ -154,8 +167,8 @@ span{
 .toogle__menu{
   
   
-    width: 40px;
-    height: 30px;
+    width: 50px;
+    height: 40px;
 }
 .one,.two,.three{
     width: 100%;
@@ -163,14 +176,14 @@ span{
     margin: 6px auto;
     margin-right: 20px;
     transition-duration: 0.5s;
-    background-color: red;
+    background-color: rgb(255, 0, 170);
 }
 
 .logo__menu__resp.on{
     position: absolute;
     top:0;
     left:0;
-    background-color: rgb(23, 12, 12);
+    background-color: rgb(80, 9, 76);
     z-index: 2;
     display: flex;
     justify-content: center;
