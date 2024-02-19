@@ -11,7 +11,7 @@ a{
 
 .header{
  display: flex;
- position: sticky;
+ position: fixed;
  top: 0px;
  padding: 2rem;
  align-items: center;
@@ -84,7 +84,7 @@ span{
     background-color: #CE82D0;
     display: flex;
     padding: 1.2rem;
-    height: 80vh;
+    height: 50vh;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -92,6 +92,7 @@ span{
 
 .swiper{
     width: 100%;
+    z-index: 1;
     max-width: 900px;
     justify-content: center;
     align-items: center;
@@ -185,3 +186,58 @@ span{
   
 }
 
+.footer__container{
+    height: 50vh;
+    width: 100%;
+   
+}
+.footer__address{
+    padding-block: 2.5rem;
+    
+    flex-wrap: wrap;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    background-color: #B73493;
+}
+.footer__icons_address{
+    display: flex;
+    width: 300px;
+    gap: 3rem;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+   
+    text-align: center;
+}
+.footer__social{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #66338F;
+    height: 30vh;
+}
+.icones__social{
+ 
+    color: #e856fe;
+    
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+.footer__icons_address i {
+    font-size: 1.9rem;
+    color: black;
+}
+.footer__icons_address h2{
+    color: white;
+    font-size: 1rem;
+    font-family: sans-serif;
+}
+.footer__social h2{
+    font-size: 1rem;
+    font-family: sans-serif;
+    color: white;
+}
