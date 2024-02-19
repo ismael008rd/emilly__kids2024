@@ -36,21 +36,26 @@
   });
 
 
-  const btnLinks= document.querySelector('.btn__links')
+  const btnLinks= document.querySelectorAll('.btn__links')
   const menuvisu = document.querySelector('.logo__menu__resp')
   const menuHambu= document.querySelector('.hambu')
-  const items = document.querySelectorAll('.items')
-  menuHambu.addEventListener('click',()=>{
-    console.log('clicado')
-    btnLinks.style.display='flex'
-    menuvisu.style.display='none'
-  })
+  const itemsmenu= document.querySelectorAll('.items')
+  const toggle__menu= document.querySelector('.toogle__menu')
+  let show=true
 
+  toggle__menu.addEventListener('click',()=>{
+    console.log('clicado toogle')
+    
+    document.body.style.overflow=show?'hidden':'initial'
 
-  
-items.forEach((elemento)=>{
-  elemento.addEventListener('click',()=>{
-    btnLinks.style.display='none'
-    menuvisu.style.display='flex'
+    menuvisu.classList.toggle('on',show)
+    show= !show
+    
   })
-})
+ 
+  itemsmenu.forEach((e)=>{
+   e.addEventListener('click',()=>{
+    menuvisu.classList.remove('on')
+    document.body.style.overflow='initial'
+   })
+  })
