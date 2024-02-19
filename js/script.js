@@ -59,3 +59,12 @@
     document.body.style.overflow='initial'
    })
   })
+
+  const produtosimgs= document.querySelectorAll('.main_imgs ')
+
+
+  produtosimgs.forEach((elemento)=>{
+    elemento.addEventListener('click',()=>{
+      console.log(elemento.id)
+    })
+  })
