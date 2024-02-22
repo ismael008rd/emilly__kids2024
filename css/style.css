@@ -1,6 +1,8 @@
 *{
     padding: 0;
     margin: 0;
+    outline: none;
+    border: none;
     box-sizing: border-box;
 }
 
@@ -26,11 +28,26 @@ a{
 .header__nav{
     width: 100%;
     max-width: 800px;
-   
+    position: relative;
     display: flex;
+    align-items: center;
     justify-content: flex-end;
     
 }
+
+.nav__img{
+
+    position: absolute;
+    left: 1.2rem;
+}
+
+.nav__img img{
+    width: 70px;
+    border-radius: 50%;
+    height: 70px;
+}
+
+
 .header__items{
     
     display: flex;
@@ -38,14 +55,14 @@ a{
     justify-content: space-between;
 }
 
-.header__items li, .btn__links> ul> li{
-    width: 9rem;
+.header__items li{
+    width: 4.5rem;
     text-align: center;
-    height: 3rem;
-    font-size: .9rem;
+    
+    font-size: .7rem;
     text-transform: uppercase;
-    font-family:'Times New Roman', Times, serif;
-    padding: 1rem 1rem;
+    font-family:Georgia, 'Times New Roman', Times, serif, Times, serif;
+    padding-block: .5rem;
     background-color:#BA3BCE;
     border-radius: 5px;
     list-style: none;
@@ -167,8 +184,9 @@ span{
 .toogle__menu{
   
   
-    width: 50px;
-    height: 40px;
+    width: 70px;
+    padding: .5rem;
+    height: 60px;
 }
 .one,.two,.three{
     width: 100%;
@@ -219,10 +237,38 @@ span{
         display: none;
         transition: all 5s;
     }
+
+    .nav__img {
+        display: none;
+    }
     
 
   .header__amburgue{
     display: flex;
+  }
+
+  .btn__links{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+     width: 100%;
+  }
+  .btn__links ul{
+    text-align: center;
+    width: 50%;
+  }
+
+ li:hover{
+    background-color: red;
+  }
+
+  .btn__links> ul> li{
+    text-transform: uppercase;
+    padding: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    list-style: none;
+    border: 1px solid pink;
   }
 
     
@@ -244,8 +290,9 @@ span{
 }
 .footer__icons_address{
     display: flex;
+ 
     width: 300px;
-    gap: 3rem;
+    gap: 2rem;
     justify-content: center;
     flex-direction: column;
     align-items: center;
@@ -265,12 +312,12 @@ span{
 .icones__social{
  
     color: #e856fe;
-    
+    cursor: pointer;
     margin-bottom: 2rem;
     font-size: 2rem;
 }
 .footer__icons_address i {
-    font-size: 1.9rem;
+    font-size: 2.9rem;
     color: black;
 }
 .footer__icons_address h2{
@@ -282,4 +329,28 @@ span{
     font-size: 1rem;
     font-family: sans-serif;
     color: white;
+}
+
+.compra__car{
+    width: 85%;
+    margin-top: 13px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+.btn__carrinho,.btn__comprar{
+    cursor: pointer;
+    color: white;
+    padding-block: .9rem;
+
+ 
+}
+
+.btn__carrinho{
+    background-color: transparent;
+    border: 2px solid orange;
+}
+.btn__comprar{
+   background-color: transparent;
+   border: 2px solid pink;
 }

@@ -6,7 +6,7 @@
     grabCursor: true, // Cursor de agarrar ao passar os slides
     centeredSlides: true, // Centraliza os slides
     slidesPerView: 'auto', // Quantidade de slides visíveis por vez (ajuste conforme desejado)
-    spaceBetween: 5, // Espaçamento entre os slides
+    spaceBetween: 50, // Espaçamento entre os slides
     navigation: {
       nextEl: '.swiper-button-next', // Botão de próxima imagem
       prevEl: '.swiper-button-prev', // Botão de imagem anterior
@@ -63,8 +63,8 @@
   const produtosimgs= document.querySelectorAll('.main_imgs ')
 
 
-  produtosimgs.forEach((elemento)=>{
-    elemento.addEventListener('click',()=>{
-      console.log(elemento.id)
-    })
-  })
+  // produtosimgs.forEach((elemento)=>{
+  //   elemento.addEventListener('click',()=>{
+  //     console.log(elemento.id)
+  //   })
+  // })
