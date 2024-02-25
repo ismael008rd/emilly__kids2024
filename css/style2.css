@@ -1,29 +1,65 @@
 *{
     padding: 0;
+    border: none;
+    outline: none;
     box-sizing: border-box;
     margin: 0;
 }
+
+
 .container__car{
+    padding-top: 1rem;
     background-color: pink;
-   
+    gap: 1.5rem;
     display: flex;
-    
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
 .products{
-    width: 400px;
-    height: 40vh;
+    width: 350px;
     
+    padding: 1.2rem;
     display: flex;
-    flex-direction:column;
-    align-items: center;
-    justify-content: center;
+    
+    justify-content: space-between;
     background-color: white;
 }
 
 .product__img{
-    width: 300px;
+    width: 100px;
+    height: 100px;
+    
+}
+
+.cards__products{
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+    display: flex;
+}
+.buttons_finalizar{
+    width: 60%;
+    display: flex;
+     
+    justify-content: center;
+    background-color: red;
+}
+.buttons_finalizar button{
+    width: 100%;
+    font-size: 1.2rem;
+    background-color: rgb(233, 60, 88);
+    color: white;
+    padding: 1.2rem;
+
+}
+
+@media screen and (max-width:450px){
+    .container__car{
+        height: 100%;
+        min-height: 100vh;
+    }
 }

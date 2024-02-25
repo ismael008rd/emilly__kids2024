@@ -1,4 +1,6 @@
 
+
+
   const swiper = new Swiper('.swiper', {
     direction: 'horizontal', // Direção do slider (horizontal)
     loop: true, // Loop infinito
@@ -72,11 +74,12 @@
   const btn_adcionarCar=document.querySelectorAll('.btn__carrinho')
 
   let arrayInfo = []
+  
 
   btn_adcionarCar.forEach((elemento)=>{
   elemento.addEventListener('click',()=>{
 
-  
+     
 
     function AdcionarElement(){
       const elementpro=elemento.parentElement.parentElement
@@ -84,27 +87,26 @@
       const precoprodutc =elementpro.querySelectorAll('p')[0].innerText
       console.log(precoprodutc)
       console.log(imgprodutc)
-      
-  
 
-      class Inf {
-        constructor(img , preco){
-          this.image=img
-          this.precos=preco
-        }
+      const produto = {
+        id: (Math.floor(Math.random() * 99)),
+        img: imgprodutc,
+        preco: precoprodutc
+        
+    };
 
-        infor(){
-          console.log('image'+this.image)
-          console.log('product'+this.precos)
-        }
-      }
+    console.log(produto.id)
+    
+    // Verificar se já existe algum carrinho no localStorage
+    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    
+    // Adicionar o novo produto ao carrinho
+    carrinho.push(produto);
+    
+    // Salvar o carrinho atualizado no localStorage
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
 
-      const infrom= new Inf(imgprodutc,precoprodutc)
 
-      console.log(infrom)
-
-    console.log(JSON.stringify(infrom))
-     localStorage.setItem('imorale',JSON.stringify(infrom))
     }
       
 
@@ -112,10 +114,12 @@
  
     console.log(arrayInfo)
   
-   
+
 
    
   })
  
 
   })
+
+ 
