@@ -68,3 +68,54 @@
   //     console.log(elemento.id)
   //   })
   // })
+
+  const btn_adcionarCar=document.querySelectorAll('.btn__carrinho')
+
+  let arrayInfo = []
+
+  btn_adcionarCar.forEach((elemento)=>{
+  elemento.addEventListener('click',()=>{
+
+  
+
+    function AdcionarElement(){
+      const elementpro=elemento.parentElement.parentElement
+      const imgprodutc =elementpro.querySelectorAll('img')[0].src
+      const precoprodutc =elementpro.querySelectorAll('p')[0].innerText
+      console.log(precoprodutc)
+      console.log(imgprodutc)
+      
+  
+
+      class Inf {
+        constructor(img , preco){
+          this.image=img
+          this.precos=preco
+        }
+
+        infor(){
+          console.log('image'+this.image)
+          console.log('product'+this.precos)
+        }
+      }
+
+      const infrom= new Inf(imgprodutc,precoprodutc)
+
+      console.log(infrom)
+
+    console.log(JSON.stringify(infrom))
+     localStorage.setItem('imorale',JSON.stringify(infrom))
+    }
+      
+
+    AdcionarElement()
+ 
+    console.log(arrayInfo)
+  
+   
+
+   
+  })
+ 
+
+  })
