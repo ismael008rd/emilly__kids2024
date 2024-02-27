@@ -232,13 +232,13 @@ span{
 }
 
 .logo__menu__resp.on .toogle__menu .one{
-    transform: rotate(45deg) translate(7px , 7px);
+    transform: rotate(45deg) translate(7px , 10px);
 }
 .logo__menu__resp.on .toogle__menu .two{
    opacity: 0;
 }
 .logo__menu__resp.on .toogle__menu .three{
-    transform: rotate(-45deg) translate(8px , -9px);
+    transform: rotate(-45deg) translate(8px , -10px);
 }
 
 @media screen and (max-width:560px) {

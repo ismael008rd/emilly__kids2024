@@ -6,10 +6,17 @@
     margin: 0;
 }
 
+body{
+    height: 100%;
+    background-color: pink;
+}
+
 
 .container__car{
+    width: 100%;
     padding-top: 1rem;
-    background-color: pink;
+    padding-bottom: 1rem;
+   
     gap: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -19,18 +26,19 @@
 }
 
 .products{
-    width: 350px;
+    width: 75%;
     
     padding: 1.2rem;
     display: flex;
-    
-    justify-content: space-between;
-    background-color: white;
+    gap: .4rem;
+    align-items: center;
+   
+    background-color: rgb(231, 227, 227);
 }
 
 .product__img{
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     
 }
 
@@ -58,8 +66,58 @@
 }
 
 @media screen and (max-width:450px){
-    .container__car{
-        height: 100%;
-        min-height: 100vh;
-    }
+   
+}
+
+.input_card{
+    background-color: rgb(213, 197, 197);
+    height: 40px;
+    text-align: center;
+    padding: 5px;
+    border: 2px solid white;
+    width: 3rem;
+}
+
+.prece__product{
+  
+    font-size: .9rem;
+    background-color: white;
+
+}
+
+
+
+.valor_prdut{
+    
+   border: 1px solid black;
+   
+   
+}
+.btn_remove{
+   
+    background-color: black;
+    color: white;
+    
+}
+.items{
+    width: 5.1rem;
+    height: 2rem;
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.voltar_home{
+    padding: 1rem;
+   
+    width: 100%;
+}
+
+.voltar_home a{
+    font-size: 2rem;
+    cursor: pointer;
+    color: rgb(110, 37, 49);
+    text-decoration: none;
 }
