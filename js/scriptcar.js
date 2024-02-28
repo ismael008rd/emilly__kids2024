@@ -22,7 +22,7 @@
 
             <span class='valor_prdut items'>${produto.preco}</span>
             
-            <input type="number" class="input_card " />
+            <input type="number" class="input_card items " />
             <button class="btn_remove items">Deletar</button>
             <h2 class="prece__product items" >${produto.preco}</h2>
              
@@ -32,6 +32,8 @@
         cards__products.innerHTML+=result
         
     });
+
+    Total()
 
 }
 
@@ -90,9 +92,34 @@ const btn_compar=document.querySelector('.btn__comprar')
                 elemento.parentElement.lastElementChild.innerText=`${somar} $`
                 
                 console.log(somar)
-            
+                Total()
                
            })
         })
         
     
+        function Total(){
+            const valor_produtc= document.querySelectorAll('.prece__product ')
+
+            const tudo =  valor_produtc.forEach((preco,a,b)=>{
+                const result =parseFloat(preco.innerText)
+              
+               
+               const itee= Array.from(b)
+
+
+              const total= itee.map((elemento)=>{
+                return Number(elemento.innerText.replace("$",""))
+               })
+          const somar=total.reduce((a,b)=>{
+                return a+b})
+               
+         console.log(somar)
+             
+         const totalP= document.querySelector('.container__total').innerText=somar
+        
+        
+        })
+               
+            
+        }
