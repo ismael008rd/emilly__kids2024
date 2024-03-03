@@ -14,7 +14,7 @@
       y:0
      },
     
-    spaceBetween: 10, // Espaçamento entre os slides
+    spaceBetween: 20, // Espaçamento entre os slides
     navigation: {
       nextEl: '.swiper-button-next', // Botão de próxima imagem
       prevEl: '.swiper-button-prev', // Botão de imagem anterior
@@ -33,7 +33,7 @@
            loop:true,
             slidesPerView:3,
             centeredSlides:'auto',
-            spaceBetween:-64,
+            // spaceBetween:-64,
         }
     }
 

@@ -127,7 +127,7 @@ span{
     background-color: #CE82D0;
     display: flex;
     padding: 1.2rem;
-    height: 55vh;
+    height: 48vh;
     align-items: center;
     justify-content: center;
     
@@ -135,6 +135,7 @@ span{
 .informaimg p{
     font-size: 1.5rem;
     font-family: cursive;
+    color: rgb(113, 0, 55);
 }
 
 .swiper{
@@ -149,7 +150,9 @@ span{
 
 
 .swiper-slide {
-
+     display: flex;
+     justify-content: center;
+     align-items: center;
     
   }
 
@@ -157,10 +160,10 @@ span{
 
   .main_imgs{
     text-align: center; /* Centraliza o conteúdo dos slides */
-    background-color:transparent;
-   
+    background-color:rgb(255, 88, 188);
+    border-radius: .9rem;
     display: flex;
-     border: 2px solid red;
+   
     gap: 4px;
     padding-block: 1.3rem;
     flex-direction: column;
@@ -390,6 +393,7 @@ span{
     text-transform: uppercase;
     cursor: pointer;
     color: white;
+    font-family:cursive;
     padding-block: .9rem;
 
  
@@ -397,12 +401,12 @@ span{
 
 .btn__carrinho{
     background-color: transparent;
-    background-color: rgba(235, 186, 6, 0.2);
+    background-color: rgb(111, 31, 109);
     /* border: 1px solid orange; */
 }
 .btn__comprar{
    background-color: transparent;
-   background-color: rgba(250, 19, 211, 0.808);
+   background-color: rgba(211, 12, 75, 0.808);
    /* border: 2px solid pink; */
 }
 
