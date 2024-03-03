@@ -6,16 +6,22 @@
     loop: true, // Loop infinito
     effect: 'carousel', // Efeito de carrossel
     grabCursor: true, // Cursor de agarrar ao passar os slides
-    centeredSlides: true, // Centraliza os slides
-    slidesPerView: 'auto', // Quantidade de slides visíveis por vez (ajuste conforme desejado)
-    spaceBetween: 50, // Espaçamento entre os slides
+    centeredSlides:true, // Centraliza os slides
+    slidesPerView: 3,
+     // Quantidade de slides visíveis por vez (ajuste conforme desejado)
+     translateTo:{
+      x:200,
+      y:0
+     },
+    
+    spaceBetween: 10, // Espaçamento entre os slides
     navigation: {
       nextEl: '.swiper-button-next', // Botão de próxima imagem
       prevEl: '.swiper-button-prev', // Botão de imagem anterior
     },
 
     breakpoints:{
-      300:{
+      400:{
         slidesPerView:1,
         centeredSlides:'auto',
     },
