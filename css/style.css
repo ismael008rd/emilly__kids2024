@@ -127,7 +127,7 @@ span{
     background-color: #CE82D0;
     display: flex;
     padding: 1.2rem;
-    height: 48vh;
+    
     align-items: center;
     justify-content: center;
     
@@ -135,7 +135,7 @@ span{
 .informaimg p{
     font-size: 1.5rem;
     font-family: cursive;
-    color: rgb(113, 0, 55);
+    color: rgb(60, 20, 39);
 }
 
 .swiper{
@@ -165,20 +165,21 @@ span{
     display: flex;
    
     gap: 4px;
-    padding-block: 1.3rem;
+    padding: .8rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-   
+    
     width: 280px;
   }
 
   .swiper-slide img {
    
     
-    width: 90px;
+    width: 100%;
+    height:20rem;
     border-radius: 20px;
-    height: 90px; /* Garante que as imagens dos slides não ultrapassem a largura do contêiner */
+   /* Garante que as imagens dos slides não ultrapassem a largura do contêiner */
   }
 .main__cards{
     background-color: black;
@@ -392,16 +393,16 @@ span{
 .btn__carrinho,.btn__comprar{
     text-transform: uppercase;
     cursor: pointer;
-    color: white;
-    font-family:cursive;
+    color: rgb(255, 242, 254);
+    font-family:sans-serif;
     padding-block: .9rem;
 
  
 }
 
 .btn__carrinho{
-    background-color: transparent;
-    background-color: rgb(111, 31, 109);
+background-color: transparent;
+border:3px solid rgb(111, 31, 109);
     /* border: 1px solid orange; */
 }
 .btn__comprar{

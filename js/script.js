@@ -7,7 +7,7 @@
     effect: 'carousel', // Efeito de carrossel
     grabCursor: true, // Cursor de agarrar ao passar os slides
     centeredSlides:true, // Centraliza os slides
-    slidesPerView: 3,
+    slidesPerView: 1,
      // Quantidade de slides visíveis por vez (ajuste conforme desejado)
      translateTo:{
       x:200,
@@ -25,11 +25,11 @@
         slidesPerView:1,
         centeredSlides:'auto',
     },
-        768:{
+        700:{
             slidesPerView:2,
             centeredSlides:'auto',
         },
-        1152:{
+        1120:{
            loop:true,
             slidesPerView:3,
             centeredSlides:'auto',
