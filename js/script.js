@@ -129,3 +129,13 @@
   })
 
  
+const btn__comprar = document.querySelectorAll('.btn__comprar')
+
+btn__comprar.forEach((elemento)=>{
+elemento.addEventListener('click',()=>{
+    alert('Em desenvolvimento ...')
+  })
+
+})
+
+

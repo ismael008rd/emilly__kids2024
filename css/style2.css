@@ -14,8 +14,7 @@ body{
 
 .container__car{
     width: 100%;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+   
    
     gap: 1.5rem;
     display: flex;
@@ -46,6 +45,7 @@ body{
     justify-content: center;
     flex-direction: column;
     gap: 1.2rem;
+    overflow: auto;
     align-items: center;
     display: flex;
 }
@@ -109,7 +109,9 @@ body{
 
 .voltar_home{
     padding: 1rem;
-   
+    position: absolute;
+    top: 2rem;
+    left: 1.9rem;
     width: 100%;
 }
 

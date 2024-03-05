@@ -95,11 +95,11 @@ a{
 .header__main{
     display: flex;
     flex-wrap: wrap;
-  
+     min-height:700px;
     align-content: center;
     justify-content:space-around;
     background-color: #F8CDEE;
-    height: 500px;
+    height:auto;
     align-items: center;
 }
 .img__header img{
@@ -338,7 +338,7 @@ span{
     display: flex;
     gap: 20px;
     justify-content: center;
-    background-color: #451f3c;
+    background-color: #080c1a;
 }
 .footer__icons_address{
     display: flex;
@@ -358,12 +358,12 @@ span{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #66338F;
+    background-color: #e5d9ef;
     height: 30vh;
 }
 .icones__social{
  
-    color: #e856fe;
+    color: #432848;
     cursor: pointer;
     margin-bottom: 2rem;
     font-size: 2rem;
@@ -380,17 +380,18 @@ span{
 .footer__social h2{
     font-size: 1rem;
     font-family: sans-serif;
-    color: white;
+    color: rgb(18, 9, 9);
 }
 
 .compra__car{
-    width: 60%;
+    width: 100%;
     margin-top: 13px;
     display: flex;
     gap: 15px;
     flex-direction: column;
 }
 .btn__carrinho,.btn__comprar{
+    width: 100%;
     text-transform: uppercase;
     cursor: pointer;
     color: rgb(255, 242, 254);
@@ -401,8 +402,7 @@ span{
 }
 
 .btn__carrinho{
-background-color: transparent;
-border:3px solid rgb(111, 31, 109);
+background-color: #b441c6;
     /* border: 1px solid orange; */
 }
 .btn__comprar{
