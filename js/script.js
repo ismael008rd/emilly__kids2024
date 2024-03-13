@@ -68,74 +68,118 @@
    })
   })
 
-  const produtosimgs= document.querySelectorAll('.main_imgs ')
-
-
-  // produtosimgs.forEach((elemento)=>{
-  //   elemento.addEventListener('click',()=>{
-  //     console.log(elemento.id)
-  //   })
-  // })
-
-  const btn_adcionarCar=document.querySelectorAll('.btn__carrinho')
-
-  let arrayInfo = []
   
 
-  btn_adcionarCar.forEach((elemento)=>{
-  elemento.addEventListener('click',()=>{
-
-     
-
-    function AdcionarElement(){
-      const elementpro=elemento.parentElement.parentElement
-      const imgprodutc =elementpro.querySelectorAll('img')[0].src
-      const precoprodutc =elementpro.querySelectorAll('p')[0].innerText
-      console.log(precoprodutc)
-      console.log(imgprodutc)
-
-      const produto = {
-        id: (Math.floor(Math.random() * 99)),
-        img: imgprodutc,
-        preco: precoprodutc
-        
-    };
-
-    console.log(produto.id)
-    
-    // Verificar se já existe algum carrinho no localStorage
-    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-    
-    // Adicionar o novo produto ao carrinho
-    carrinho.push(produto);
-    
-    // Salvar o carrinho atualizado no localStorage
-    localStorage.setItem('carrinho', JSON.stringify(carrinho));
-
-
-    }
-      
-
-    AdcionarElement()
  
-    console.log(arrayInfo)
-  
-
-
-   
-  })
- 
-
-  })
-
- 
-const btn__comprar = document.querySelectorAll('.btn__comprar')
+const btn__comprar = document.querySelectorAll('.btn__carrinho--comprar')
 
 btn__comprar.forEach((elemento)=>{
 elemento.addEventListener('click',()=>{
     alert('Em desenvolvimento ...')
+
   })
+
 
 })
 
+
+class Carrinho{
+  principaldiv=null
+  constructor(image,preco){
+    this.imagen=image
+    this.valor=preco
+    this.divdestino = document.body
+  }
+
+  infor(){
+    console.log("imagem" + this.imagen)
+    console.log("valor" + this.valor)
+  }
+  
+  Modelo(){
+   
+
+  }
+}
+
+const carro = new Carrinho('urltaltal',1200)
+
+carro.infor()
+
+function CarrinhoCompr(elemento, imagem , preco){
+     elemento= new Carrinho(imagem,preco)
+      elemento.infor()
+    elemento.Modelo()
+}
+
+
+CarrinhoCompr('carro','','80')
+
+
+const mainCard = document.querySelectorAll('.main_card')
+const btn__carrinho = document.querySelectorAll('.btn__carrinho--adcionar')
+
+
+let itemsCard=[
+  // {imagem:imageCart, preco:precoCart, id:Math.floor(Math.random() * 100)}
+]
+
+
+btn__carrinho.forEach((elemento)=>{
+  elemento.addEventListener('click',()=>{
+
+    
+  
+
+    const imageCart = elemento.parentElement.parentElement.querySelector('img').src
+
+    const precoCart =elemento.parentElement.parentElement.querySelector('p').innerText
+    console.log(precoCart)
+   
+    
+   
+    
+   
+     itemsCard.push({imagem:imageCart, preco:precoCart, id:Math.floor(Math.random() * 100)})
+     
+     console.log(itemsCard)
+    
+    
+
+
+   
+   
+    if(localStorage.hasOwnProperty('cards')){
+      
+      const elements = JSON.parse(localStorage.getItem('cards'))||[] 
+      
+        console.log(elements)
+ 
+         elements.push({imagem:imageCart, preco:precoCart, id:Math.floor(Math.random() * 100)})
+
+         
+      localStorage.setItem('cards',JSON.stringify(elements))
+  
+ 
+
+
+    }else{ 
+      console.log('não tem carrinho')
+      console.log(itemsCard)
+   
+      localStorage.setItem('cards',JSON.stringify(itemsCard))
+
+
+    }
+
+    
+ 
+     
+  
+  
+    
+    
+  
+  }) 
+})
 

@@ -1,172 +1,119 @@
-       
-    
-    const cards__products = document.querySelector(".cards__products");
-   let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-
-          
-   let totalP= document.querySelector('.container__total')
-        
-
-   console.log(totalP)
+ 
 
 
- function Atualizar() {
-           
-   
+const elements =JSON.parse(localStorage.getItem('cards')) || [];
 
-    // const productsmais= document.querySelector('.products')
+const containe_card = document.querySelector('.cards__products')
+
+console.log(elements)
   
 
-    
-
-    // Exibir os produtos do carrinho na página
-    carrinho.forEach(produto => {
-
-        
-        console.log(produto.id,produto.img, produto.preco);
-        const result = ` <div class="products " id ='${produto.id}'>
-            <img src="${produto.img}" alt="imagem do produto" class="product__img"/>
-
-            <span class='valor_prdut items'>${produto.preco}</span>
-            
-            <input type="number" class="input_card items " />
-            <button class="btn_remove items">Deletar</button>
-            <h2 class="prece__product items" >${produto.preco}</h2>
-             
-            </div>`
-   
-
-        cards__products.innerHTML+=result
-
-    
-          
-    });
-
-    
+       
+const cardss= Array.from(elements)
+console.log(cardss)
 
 
+function DecreaseQuantity(span) {
+  const quantitySpan = span.nextElementSibling;
+
+  let valuecard=Number(span.parentElement.parentElement.parentElement.querySelector('.prece__product').innerText.replace('$',''))
+
+  console.log(valuecard)
+  let resultcard=span.parentElement.parentElement.parentElement.querySelector('.product__total--total')
+  
+  let quantity = parseInt(quantitySpan.textContent);
+
+  if (quantity >= 1) {
+      quantity--;
+      quantitySpan.textContent = quantity<10?"0"+quantity: quantity;;
+      resultcard.innerText=`$ ${quantity*valuecard}`
+  }
+
+  console.log('clicli')
+}
+
+function increaseQuantity(span) {
+  const quantitySpan = span.previousElementSibling;
+   let valuecard=Number(span.parentElement.parentElement.parentElement.querySelector('.prece__product').innerText.replace('$',''))
+  let resultcard=span.parentElement.parentElement.parentElement.querySelector('.product__total--total')
+
+  let quantity = parseInt(quantitySpan.textContent);
+  quantity++;
+  quantitySpan.textContent =quantity<10?"0"+quantity: quantity;
+  resultcard.innerText=`$ ${quantity*valuecard}`
 }
 
 
-
-Atualizar()
-
-const produtos = document.querySelectorAll('.products')
-
-const btn_deletar = document.querySelectorAll('.btn_remove')
-
-
-
-btn_deletar.forEach((element) => {
-    // Adicionando um ouvinte de evento de clique a cada elemento
-    
-
-    element.addEventListener('click', () => {
-
-   
-        
-        const idDoProdutoClicado = element.parentElement.id;
-        console.log(idDoProdutoClicado)
-
-      
-       
-        element.parentElement.remove()
-        carrinho = carrinho.filter(produto => produto.id != idDoProdutoClicado);
-           console.log(carrinho)
-        
-        localStorage.setItem('carrinho', JSON.stringify(carrinho));
-            
-        Total()
-        
-    });
-   
+cardss.forEach((element)=>{
 
   
-   
-});
+    console.log(element)
 
+ 
 
+    const htmlcard= `
+    <div class="products" id="${element.id}">
+    <div class="products__item1">
+      <img
+        src="${element.imagem}"
+        alt="imagens do produto"
+        class="product__img"
+      />
+      <h2 class="prece__product"> ${element.preco}</h2>
+    </div>
 
+    <div class="products__items">
+      <div class="products_quanti">
+        <span class="products__quanti--minus" onclick="DecreaseQuantity(this)" >-</span>
+        <span class="products__quanti--total">01</span>
+        <span class="products__quanti--plus" onclick="increaseQuantity(this)">+</span>
 
-const btn_compar=document.querySelector('.btn__comprar')
-
-
-
-
-        const input_card = document.querySelectorAll('.input_card')
-
-        input_card.forEach((elemento)=>{
-           
-            Total()
-
-
-            elemento.value='1'
-            
-            elemento.addEventListener('change',()=>{
-
-             
-              const valorProduto = elemento.parentElement.lastElementChild.innerText
-                
-              const varloSpand=elemento.parentElement.querySelector('span').innerText
-             
-              
-              const valorCorr=Number(varloSpand.replace('$',''))
-              
-                 
-
-                const somar =  valorCorr * parseFloat(elemento.value)
-                    
-                elemento.parentElement.lastElementChild.innerText=`${somar} $`
-                
-                console.log(somar)
-             
-               
-           })
-
-         
-          
-        })
-        
-    
+      </div>
       
-    
-        function Total(){
-            const valor_produtc= document.querySelectorAll('.prece__product')
-
-            valor_produtc.forEach((preco,a,b)=>{
-                const result =parseFloat(preco.innerText)
-              
-               
-               const itee= Array.from(b)
-                    
-               console.log(itee)
-
-              const total= itee.map((elemento)=>{
-                return Number(elemento.innerText.replace("$",""))
-               })
-
-
-          const somar=total.reduce((a,b)=>{
-                return a+b})
-               
-         
-             
-           totalP.innerText = somar + "$"
-
-        console.log(somar)
-        console.log(totalP)
-
-        if(totalP.innerText===''){
-            console.log('total está vazio')
-        }
-    
-
-       
-        
-        })
-    
-            
-        }
-
-       
+      <div class="product__items--deletar">
+          <span>X</span>
+      </div>
+    </div>
      
+    <div class=".products__container--total">
+      <div class="total">Total</div>
+      <span class="product__total--total">${element.preco}</span>
+    </div>
+   
+  </div>
+    `
+
+    containe_card.innerHTML+=htmlcard
+   
+    
+   
+})
+
+
+let score =1
+const minus= document.querySelectorAll('.products__quanti--minus')
+const spanquanti= document.querySelector('.products__quanti--total')
+const plusquanti=document.querySelectorAll('.products__quanti--plus')
+const preco_product = document.querySelector('.prece__product')
+const totalfinal = document.querySelector('.product__total--total')
+
+
+
+
+
+
+
+function Totalquanti(){
+    const quantiti = Number(spanquanti.innerText)
+    const preco = Number(preco_product.innerText.replace('$',''))
+
+    const somar = preco*quantiti
+    console.log(somar)
+      if(totalfinal.innerText>=totalfinal.innerText){
+        totalfinal.innerText=`$ ${somar}`
+
+      }
+   
+
+    
+}
