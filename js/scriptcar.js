@@ -3,6 +3,17 @@
 
 const elements =JSON.parse(localStorage.getItem('cards')) || [];
 
+
+
+
+
+let score =1
+const minus= document.querySelectorAll('.products__quanti--minus')
+const spanquanti= document.querySelector('.products__quanti--total')
+const plusquanti=document.querySelectorAll('.products__quanti--plus')
+const preco_product = document.querySelector('.prece__product')
+const totalfinal = document.querySelector('.product__total--total')
+
 const containe_card = document.querySelector('.cards__products')
 
 console.log(elements)
@@ -11,6 +22,7 @@ console.log(elements)
        
 const cardss= Array.from(elements)
 console.log(cardss)
+
 
 
 function DecreaseQuantity(span) {
@@ -41,10 +53,56 @@ function increaseQuantity(span) {
   quantity++;
   quantitySpan.textContent =quantity<10?"0"+quantity: quantity;
   resultcard.innerText=`$ ${quantity*valuecard}`
+  
 }
 
+function DeletarCard(elementcard){
+  const cardRemove=elementcard.parentElement.parentElement.parentElement
+  const cardId=elementcard.parentElement.parentElement.parentElement.id
+  console.log(cardId)
+  
 
-cardss.forEach((element)=>{
+  const elementVazio = {imagem: 'img/204.jpg', preco: 'null', id: ''}
+
+  const verele=elements.filter((element)=>{
+    return element.id != cardId
+  })
+ 
+
+  cardRemove.remove()
+
+  console.log(verele.length)
+
+  if(verele ==''){
+    console.log('fudeu')
+    console.log(elementVazio)
+    verele.push(elementVazio)
+  
+
+    location.reload()
+    
+    console.log(verele)
+   }
+   else {
+
+    console.log('elemento já tem item adicionado')
+    
+    location.reload()
+    
+  
+   }
+  console.log(verele.length)
+ 
+console.log(verele)
+  
+   
+  localStorage.setItem('cards',JSON.stringify(verele))
+ 
+
+  
+}
+
+  cardss.forEach((element)=>{
 
   
     console.log(element)
@@ -64,14 +122,14 @@ cardss.forEach((element)=>{
 
     <div class="products__items">
       <div class="products_quanti">
-        <span class="products__quanti--minus" onclick="DecreaseQuantity(this)" >-</span>
+        <span class="products__quanti--minus" onclick="DecreaseQuantity(this)">-</span>
         <span class="products__quanti--total">01</span>
         <span class="products__quanti--plus" onclick="increaseQuantity(this)">+</span>
 
       </div>
       
       <div class="product__items--deletar">
-          <span>X</span>
+          <span class='btn_delet' onclick='DeletarCard(this)'>X</span>
       </div>
     </div>
      
@@ -90,12 +148,6 @@ cardss.forEach((element)=>{
 })
 
 
-let score =1
-const minus= document.querySelectorAll('.products__quanti--minus')
-const spanquanti= document.querySelector('.products__quanti--total')
-const plusquanti=document.querySelectorAll('.products__quanti--plus')
-const preco_product = document.querySelector('.prece__product')
-const totalfinal = document.querySelector('.product__total--total')
 
 
 
@@ -103,17 +155,3 @@ const totalfinal = document.querySelector('.product__total--total')
 
 
 
-function Totalquanti(){
-    const quantiti = Number(spanquanti.innerText)
-    const preco = Number(preco_product.innerText.replace('$',''))
-
-    const somar = preco*quantiti
-    console.log(somar)
-      if(totalfinal.innerText>=totalfinal.innerText){
-        totalfinal.innerText=`$ ${somar}`
-
-      }
-   
-
-    
-}

@@ -120,3 +120,7 @@ body{
     font-size: 1rem;
     cursor: pointer;
 }
+
+.btn_delet{
+    cursor: pointer;
+}

@@ -152,18 +152,26 @@ btn__carrinho.forEach((elemento)=>{
     if(localStorage.hasOwnProperty('cards')){
       
       const elements = JSON.parse(localStorage.getItem('cards'))||[] 
+        
+      const elementosdif= elements.filter((ele)=>{
+         return ele.id !==''
+      })
+      
+
+  
       
         console.log(elements)
  
-         elements.push({imagem:imageCart, preco:precoCart, id:Math.floor(Math.random() * 100)})
-
+        elementosdif.push({imagem:imageCart, preco:precoCart, id:Math.floor(Math.random() * 100)})
+       
          
-      localStorage.setItem('cards',JSON.stringify(elements))
+      localStorage.setItem('cards',JSON.stringify(elementosdif))
   
  
 
 
-    }else{ 
+    }
+    else{ 
       console.log('não tem carrinho')
       console.log(itemsCard)
    
